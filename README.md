@@ -1,7 +1,6 @@
 # pino-azuretable
 
 [![Travis](https://img.shields.io/travis/com/ovhemert/pino-azuretable.svg?branch=master&logo=travis)](https://travis-ci.com/ovhemert/pino-azuretable)
-[![AppVeyor](https://img.shields.io/appveyor/ci/ovhemert/pino-azuretable.svg?logo=appveyor)](https://ci.appveyor.com/project/ovhemert/pino-azuretable)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/320db90115f545959ec94170976848a8)](https://www.codacy.com/app/ovhemert/pino-azuretable?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=ovhemert/pino-azuretable&amp;utm_campaign=Badge_Grade)
 [![Known Vulnerabilities](https://snyk.io/test/npm/pino-azuretable/badge.svg)](https://snyk.io/test/npm/pino-azuretable)
 [![Coverage Status](https://coveralls.io/repos/github/ovhemert/pino-azuretable/badge.svg?branch=master)](https://coveralls.io/github/ovhemert/pino-azuretable?branch=master)
