@@ -1,6 +1,6 @@
 'use strict'
 
-let azuretable = require('../src/azuretable')
+const azuretable = require('../src/azuretable')
 const test = require('tap').test
 const tested = require('../src/index')
 const sinon = require('sinon')

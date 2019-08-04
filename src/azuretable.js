@@ -13,10 +13,11 @@ class Client {
     this.tableName = options.table || 'logs'
     this.partitionKey = options.partition || process.env.NODE_ENV || 'production'
   }
+
   createEntity (log) {
     const EG = azure.TableUtilities.entityGenerator
 
-    let data = Object.assign({}, log)
+    const data = Object.assign({}, log)
     const PartitionKey = EG.String(this.partitionKey)
     const RowKey = EG.String(new Date().getTime().toString())
     const hostname = EG.String(data.hostname || os.hostname()); delete data.hostname
@@ -25,9 +26,10 @@ class Client {
     const msg = EG.String(data.msg); delete data.msg
     const time = (data.time) ? new Date(data.time) : new Date(); delete data.time
     const meta = EG.String(JSON.stringify(data))
-    let entity = { PartitionKey, RowKey, hostname, pid, level, msg, time, meta }
+    const entity = { PartitionKey, RowKey, hostname, pid, level, msg, time, meta }
     return entity
   }
+
   get tableService () {
     if (!this._tableService) {
       this._tableService = azure.createTableService(this.accountName, this.accountKey)
@@ -36,12 +38,13 @@ class Client {
     }
     return this._tableService
   }
+
   async insert (entities = []) {
     const self = this
     const data = Array.isArray(entities) ? entities : [entities]
     if (data.length <= 0) { return }
     try {
-      let batch = new azure.TableBatch()
+      const batch = new azure.TableBatch()
       data.forEach((entity) => batch.insertOrReplaceEntity(entity))
       const result = await self.tableService.executeBatchAsync(self.tableName, batch)
       return result
@@ -49,14 +52,16 @@ class Client {
       throw Error(err.message)
     }
   }
+
   insertStream () {
     const self = this
-    let writeStream = new stream.Writable({ objectMode: true, highWaterMark: 1 })
+    const writeStream = new stream.Writable({ objectMode: true, highWaterMark: 1 })
     writeStream._write = function (chunk, encoding, callback) {
       self.insert(chunk).then(() => { callback(null) }).catch(callback)
     }
     return writeStream
   }
+
   transformEntityStream (transform) {
     const self = this
     return through2.obj(function transport (chunk, enc, cb) {
@@ -64,6 +69,7 @@ class Client {
       cb(null, entry)
     })
   }
+
   validate () {
     const tableService = this.tableService
     return tableService.createTableIfNotExistsAsync(this.tableName)
