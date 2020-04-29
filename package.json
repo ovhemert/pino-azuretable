@@ -37,14 +37,14 @@
   ],
   "devDependencies": {
     "pino-multi-stream": "^4.3.0",
-    "sinon": "^9.0.1",
+    "sinon": "^9.0.2",
     "standard": "^14.3.3",
-    "tap": "^14.10.6"
+    "tap": "^14.10.7"
   },
   "dependencies": {
     "azure-storage": "^2.10.3",
     "batch2": "^1.0.6",
-    "commander": "^5.0.0",
+    "commander": "^5.1.0",
     "fast-json-parse": "^1.0.3",
     "pumpify": "^2.0.1",
     "split2": "^3.1.1",
