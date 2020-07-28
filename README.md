@@ -13,13 +13,13 @@ This module provides a "transport" for [pino][pino] that forwards messages to a 
 To use globally from command line:
 
 ```bash
-$ npm install -g pino-azuretable
+npm install -g pino-azuretable
 ```
 
 To include as a library in your project:
 
 ```bash
-$ npm install pino-azuretable
+npm install pino-azuretable
 ```
 
 ## CLI
