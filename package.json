@@ -36,7 +36,7 @@
     "test"
   ],
   "devDependencies": {
-    "pino-multi-stream": "^4.3.0",
+    "pino-multi-stream": "^5.1.1",
     "sinon": "^9.0.2",
     "standard": "^14.3.4",
     "tap": "^14.10.8"
