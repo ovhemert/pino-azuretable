@@ -1,6 +1,6 @@
 {
   "name": "pino-azuretable",
-  "version": "1.0.4",
+  "version": "2.0.0",
   "description": "A transport for pino that sends messages to Azure Table Storage",
   "homepage": "https://github.com/ovhemert/pino-azuretable",
   "main": "src/index.js",
